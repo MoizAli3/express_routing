@@ -7,12 +7,16 @@ const port = process.env.PORT || 3000;
 app.use("/api", router);
 app.use("/", express.static("public"));
 
-// app.get("/", (req, res) => {
-//   res.send(`<h1>Routes</h1>`);
-// });
+app.get("/", (req, res) => {
+  res.send(`<h1>Routes</h1>`);
+});
 
 app.get("/api", (req, res) => {
-  res.send(`<h1>Welcome to API</h1>`);
+  res.status(200).send(`<h1>Welcome to API</h1>`);
+});
+
+app.use((req, res) => {
+  res.status(404).json({ status: 404 , error: "Not Found" });
 });
 
 app.listen(port, () => {
