@@ -1,10 +1,10 @@
 import React from 'react'
 
-function UserForm() {
+function ProductForm() {
   return (
-    <div>
+    <div className='mt-4'>
       <h2 className="text-4xl text-gray-700 font-extrabold dark:text-white">
-        Users Form
+        Product Form
       </h2>
         <form className="mx-auto mt-4 py-4 w-6xl">
           <div className="relative z-0 mb-5 group">
@@ -135,4 +135,4 @@ function UserForm() {
   );
 }
 
-export default UserForm
+export default ProductForm;

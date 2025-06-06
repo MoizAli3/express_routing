@@ -1,23 +1,35 @@
 import "./App.css";
-import Table from "./components/userTable";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import Layout from "./Layout";
-import UserForm from "./components/UserForm";
 import UserProvider from "./context/users/userProvider";
 import UserDataProvider from "./context/userData/userDataProvider";
+import "@mantine/core/styles.css";
+import { MantineProvider } from "@mantine/core";
+import Product from "./pages/Product";
+import Users from "./pages/Users";
+import ProductProvider from "./context/products/productProvider";
+import ProductPageProvider from "./context/productPage/productPageProvider";
 
 function App() {
   return (
-    <UserDataProvider>
-      <UserProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </UserProvider>
-    </UserDataProvider>
+    <ProductPageProvider>
+      <UserDataProvider>
+        <ProductProvider>
+          <UserProvider>
+            <MantineProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route path="products" element={<Product />} />
+                    <Route path="users" element={<Users />} />
+                  </Route>
+                </Routes>
+              </BrowserRouter>
+            </MantineProvider>
+          </UserProvider>
+        </ProductProvider>
+      </UserDataProvider>
+    </ProductPageProvider>
   );
 }
 

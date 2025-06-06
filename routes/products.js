@@ -2,10 +2,9 @@ import express from "express";
 import { Products } from "../info/data.js";
 const prodcts = express.Router();
 
-const { products } = Products;
 
 prodcts.get("/", (req, res) => {
-  res.send(products);
+  res.send(Products);
 });
 
 prodcts.get("/:id", (req, res) => {

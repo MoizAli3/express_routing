@@ -1,11 +1,12 @@
 import React from "react";
-import TableRow from "./table/TableRow";
-import UserForm from "./UserForm";
-import User from "../context/users/user";
+import TableRow from "./TableRow";
+import User from "../../context/users/user";
 import { useContext } from "react";
+import UserData from "../../context/userData/userData";
 
-function userTable() {
+function UserTable() {
   const { userPage, setUserPage } = useContext(User);
+  const { userData } = useContext(UserData);
 
   const usersHandler = () => {
     setUserPage(true);
@@ -13,8 +14,8 @@ function userTable() {
   };
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-7xl p-2">
-      <div className="flex justify-between my-3">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-6xl p-2">
+      <div className="flex justify-between  my-3">
         <h2 className="text-4xl text-gray-700 font-extrabold dark:text-white">
           Users
         </h2>
@@ -141,16 +142,16 @@ function userTable() {
               Gender
             </th>
             <th scope="col" className="px-6 py-3">
-              Action
+              View
             </th>
           </tr>
         </thead>
         <tbody>
-          <TableRow />
+          <TableRow data={userData} />
         </tbody>
       </table>
     </div>
   );
 }
 
-export default userTable;
+export default UserTable;

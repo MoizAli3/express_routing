@@ -1,6 +1,6 @@
+import { useState } from "react";
 import UserData from "./userData";
 
-import { useState } from "react";
 
 const userDataProvider = ({ children }) => {
   const [userData, setUserData] = useState("");
