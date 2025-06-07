@@ -10,9 +10,11 @@ function Users() {
   const { userPage } = useContext(User);
   const { userData, setUserData } = useContext(UserData);
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/users`)
+      .get(`${apiUrl}/api/users`)
       .then((res) => setUserData(res.data))
       .catch((err) => console.log(err));
   }, []);
