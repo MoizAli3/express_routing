@@ -1,8 +1,7 @@
 import { useState } from "react";
 import UserData from "./userData";
 
-
-const userDataProvider = ({ children }) => {
+const UserDataProvider = ({ children }) => {
   const [userData, setUserData] = useState("");
   return (
     <UserData.Provider value={{ userData, setUserData }}>
@@ -11,4 +10,4 @@ const userDataProvider = ({ children }) => {
   );
 };
 
-export default userDataProvider;
+export default UserDataProvider;

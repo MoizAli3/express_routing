@@ -2,12 +2,12 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import UserProvider from "./context/users/userProvider";
-import UserDataProvider from "./context/userData/userDataProvider";
+import UserDataProvider from "./context/userData/UserDataProvider";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import Product from "./pages/Product";
 import Users from "./pages/Users";
-import ProductProvider from "./context/products/productProvider";
+import ProductProvider from "./context/products/ProductProvider";
 import ProductPageProvider from "./context/productPage/productPageProvider";
 
 function App() {
