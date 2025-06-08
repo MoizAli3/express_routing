@@ -2,7 +2,7 @@ import React from "react";
 import TableRow from "./TableRow";
 import User from "../../context/users/user";
 import { useContext } from "react";
-import UserData from "../../context/userData/userData";
+import UserData from "../../context/UserData/userData";
 
 function UserTable() {
   const { userPage, setUserPage } = useContext(User);

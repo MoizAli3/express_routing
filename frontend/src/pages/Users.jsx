@@ -4,20 +4,18 @@ import UserForm from "../components/table/UserForm";
 import UserTable from "../components/table/UserTable";
 import { useEffect, useContext } from "react";
 import axios from "axios";
-import UserData from "../context/userData/userData";
+import UserData from "../context/UserData/userData";
 
 function Users() {
   const { userPage } = useContext(User);
   const { userData, setUserData } = useContext(UserData);
 
-  
-  
   useEffect(() => {
     axios
       .get(`https://express-routing-1.onrender.com/api/users`)
       .then((res) => setUserData(res.data))
       .catch((err) => console.log(err));
-  }, [ setUserData]);
+  }, [setUserData]);
 
   console.log(userData);
 
