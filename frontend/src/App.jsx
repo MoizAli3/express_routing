@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import UserProvider from "./context/users/userProvider";
-import UserDataProvider from "./context/UserData/UserDataProvider";
+import { UserDataProvider } from "./context/UserData/UserDataProvider";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import Product from "./pages/Product";
