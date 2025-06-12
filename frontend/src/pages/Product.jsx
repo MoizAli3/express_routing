@@ -14,7 +14,7 @@ function Product() {
 
   useEffect(() => {
     axios
-      .get(`https://express-routing-1.onrender.com/api/products`)
+      .get(`http://localhost:3000/api/products`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }, [setProducts]);

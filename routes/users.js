@@ -1,9 +1,10 @@
 import express from "express";
-import { Users } from "../info/data.js";
 const users = express.Router();
+import { handleGetAllUsers, handleRegisterUsers } from "../controllers/user.js";
 
-users.get("/", (req, res) => {
-  res.send(Users);
-});
+
+users.post("/", handleRegisterUsers);
+users.get("/", handleGetAllUsers);
+
 
 export default users;

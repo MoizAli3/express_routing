@@ -1,27 +1,29 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { Modal, Button, BackgroundImage } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
-function TableRow({data}) {
-  
+function TableRow({ data }) {
   const [userDetail, setUserDetail] = useState("");
   const [opened, { open, close }] = useDisclosure(false);
 
-  const user = data?.users ;
+  const user = data?.users;
 
   return (
     <>
       <Modal opened={opened} onClose={close} size="auto">
         <div className="flex justify-center space-x-4 w-5xl mb-3">
-          <div className="bg-white overflow-hidden shadow rounded-lg border mx-4 w-4xl box">
+          <div className="bg-white  shadow rounded-lg mx-4 w-4xl box">
             <div className="px-4 py-5 sm:px-6">
               <div className="flex justify-between items-center">
                 <h3 className="font-bold text-4xl leading-6 text-gray-900">
                   {userDetail.firstName}
                 </h3>
-                <button className="text-sm font-medium text-gray-500">
-                  Update
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 m-auto hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-0 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                  Edit User
                 </button>
               </div>
               <p className="mt-4 max-w-2xl text-2xl font-bold text-sm text-gray-500">

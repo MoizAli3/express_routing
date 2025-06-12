@@ -12,7 +12,7 @@ function Users() {
 
   useEffect(() => {
     axios
-      .get(`https://express-routing-1.onrender.com/api/users`)
+      .get(`http://localhost:3000/api/users`)
       .then((res) => setUserData(res.data))
       .catch((err) => console.log(err));
   }, [setUserData]);
