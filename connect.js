@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 async function connectMongoDb(url) {
   return mongoose
-    .connect(url)
+    .connect(String(url))
     .then(() => console.log("Connected!"));
 }
 

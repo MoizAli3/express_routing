@@ -2,17 +2,16 @@ import express from "express";
 import router from "./routes/index.js";
 import cors from "cors";
 import connectMongoDb from "./connect.js";
+import "dotenv/config";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use("/", router);
+app.use("/api", router);
 
-connectMongoDb(
-  "mongodb+srv://moizkhan:CS7vGEGhv3jpGVQJ@ecommerce-data.hqbxivg.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce-data"
-);
+connectMongoDb(process.env.DATABASE_URI);
 
 
 app.use((req, res) => {
